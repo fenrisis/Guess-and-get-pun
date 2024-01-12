@@ -1,7 +1,11 @@
 import requests
 import random
+from decorators import log_performance_to_file
+
+log_path = 'C:...........\\guess_get_pun\\log.txt'
 
 
+@log_performance_to_file('log.txt')
 def get_random_joke():
     try:
         response = requests.get('https://punapi.rest/api/pun')
